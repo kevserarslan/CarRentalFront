@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Vite proxy kullanarak CORS sorununu çözüyoruz
 // Artık http://localhost:8080 yerine sadece '' kullanıyoruz
-const API_BASE_URL = '';
+const API_BASE_URL = import.meta.env.VITE_API_URL; // <-- BURASI
 
 const api = axios.create({
   baseURL: API_BASE_URL,
