@@ -98,7 +98,10 @@ const MyReservations = () => {
             <div className="empty-icon">📭</div>
             <h3>Henüz rezervasyonunuz yok</h3>
             <p>Araçlarımıza göz atın ve rezervasyon yapın!</p>
-            <a href="http://localhost:8080/cars-page" className="btn btn-primary">
+            <a
+            href={`${import.meta.env.VITE_API_URL.replace('/api','')}/api/cars-page`}
+            className="btn btn-primary"
+            >
               Araçları İncele
             </a>
           </div>
