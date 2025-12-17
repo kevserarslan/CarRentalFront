@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
+const BACKEND_WEB = import.meta.env.VITE_API_URL.replace(/\/api$/, '');
+
 
 const Navbar = () => {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
@@ -25,8 +27,8 @@ const Navbar = () => {
             {/* Giriş yapmamışsa Thymeleaf linkleri göster */}
             {!isAuthenticated() && (
               <>
-                <a href="http://localhost:8080/api/" className="nav-link">Ana Sayfa</a>
-                <a href="http://localhost:8080/api/cars-page" className="nav-link">Araçlar</a>
+                <a href={`${BACKEND_WEB}/api`} className="nav-link">Ana Sayfa</a>
+                <a href={`${BACKEND_WEB}/api/cars-page`} className="nav-link">Araçlar</a>
                 
               </>
             )}

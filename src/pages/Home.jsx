@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+const BACKEND_WEB = import.meta.env.VITE_API_URL.replace(/\/api$/, '');
 
 const Home = () => {
   useEffect(() => {
     // Thymeleaf ana sayfasına yönlendir
-    window.location.href = 'http://localhost:8080/api';
+    window.location.href = `${BACKEND_WEB}/api`;
   }, []);
 
   return (
